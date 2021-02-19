@@ -13,14 +13,41 @@
     <title class="title">Todo List</title>
 </head>
 <body class="body">
-  
+
+    <nav class="nav">
+        <a href="/" class="nav-first" href="#myBtn">ToDo List</a>
+        <a href="/posts" class="nav__link" >Tasks</a>
+        <a href="/notes" class="nav__link">Notes</a>
+        <a href="/settings" class="nav__link" >Reminders</a>
+    </nav>
+
+    <!-- Topbar Search -->
+
+
+<div class="searchh">
+    <form action="#">
+        <input type="text" placeholder=" Search..." name="searchh">
+        <button>
+            <i class="fa fa-search" style="font-size: 1.2rem;">
+            </i>
+        </button>
+    </form>
+</div>
+
+
+
+    <!-- End of Topbar -->
+
+
+   
     <header class="header">
+
         <h1>TO DO LIST</h1>
     </header>
 
     <form class="form">
-        <input type="text" class="todo-input form-input"></input>
-        <button class ="todo-button form-button form__button" type="submit">
+        <input type="text" class="todo-input form-input" placeholder="Add Tasks...."></input>
+        <button class ="todo-button form-button form__button" id=mybtn type="submit">
             <i class="fas fa-plus-square" ></i>
         </button>
 

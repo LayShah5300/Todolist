@@ -4,16 +4,52 @@
     box-sizing: border-box;
 }
 .body{
-    background-image: linear-gradient(100deg,#f1a43f,#fda085);
+     --nav-width: 250px;
+    background-image: linear-gradient(120deg,#a3b8f3,#8f85f1);
     color:rgb(253, 253, 253);
     font-family: "Poppins", sans-serif;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+}
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--nav-width);
+    height: 100vh;
+    background: white;
+}
+
+.nav-first{
+    top: 0;
+    background-color: #8f85f1;
+     font-size: 1.7rem;
+    /* margin-top: 0.5rem; */
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.nav__link {
+    font-size: 1.2rem;
+    /* margin-top: 0.5rem; */
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.nav__link:hover {
+    background: #52b3e7;
 }
 .header{
-    margin-top: 6vh;
+    margin-top: 3vh;
     font-size: 1.5rem;
 }
 .header,.form{
+    margin-left: 60px;
     min-height: 14vh;
     display: flex;
     justify-content: center;
@@ -33,14 +69,16 @@
 }
 .form-button{
     min-width: 4%;
-    color: #f38466;
+    color: #6687f3;
+    /* #f38466 */
     background: white;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 .form__button:hover{
 color: white;
-background-color:#f38466 ;
+background-color:#8c66f3 ;
+/* #f38466 */
 }
 
 .todo-container{
@@ -117,7 +155,7 @@ select{
 
 select{
     font-size: 1.3rem;
-    color: #f38466;
+    color: #8c66f3;
     width: 10rem;
     cursor: pointer;
     padding: 0.6rem;
@@ -125,7 +163,7 @@ select{
 
 .select::after{
     content: "\25BC";
-    background-color: #f38466;
+    background-color: #8c66f3;
     position: absolute;
     top: 0;
     right: 0;
@@ -136,5 +174,37 @@ select{
 
 .select:hover::after{
     background: white;
-    color: #f38466;
+    color: #8c66f3;
 }
+
+/*Search Bar */
+
+/* new search bar */
+.searchh input[type=text]{ 
+        width:300px; 
+        font-size: 1.2rem;
+        height:40px; 
+        padding-left: 10px ;
+        border-radius:25px; 
+        border: none; 
+        top: 0;
+        margin-left: 1180px;
+    } 
+          
+    .searchh{ 
+        margin-top: 9px;
+       top: 0;
+    }
+          
+    .searchh button{
+        height: 40px; 
+        background-color: #0074D9; 
+        color: #f2f2f2; 
+        float: right; 
+        border-radius: 2rem;
+        padding: 5px 10px; 
+        margin-right: 16px; 
+        font-size: 12px; 
+        border: none; 
+        cursor: pointer; 
+    }  
