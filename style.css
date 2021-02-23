@@ -57,6 +57,7 @@
 }
 
 .form-input{
+    outline: none;
     min-width: 25%;
     margin-left: 40px;
 }
@@ -187,6 +188,7 @@ select{
         padding-left: 10px ;
         border-radius:25px; 
         border: none; 
+        outline: none;
         top: 0;
         margin-left: 1180px;
     } 
