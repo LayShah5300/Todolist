@@ -219,6 +219,7 @@ searchBar.addEventListener("keyup", function (e) {
 
     const term = e.target.value.toLowerCase();
     const searched = todoList.getElementsByTagName("li");
+    const delelement = document.getElementsByClassName(".todo");
     
     Array.from(searched).forEach(function (todo) {
 
