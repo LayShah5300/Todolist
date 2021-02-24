@@ -15,33 +15,23 @@
 <body class="body">
 
     <nav class="nav">
-        <a href="/" class="nav-first" href="#myBtn">ToDo List</a>
-        <a href="/posts" class="nav__link" href="#myBtn">Tasks</a>
-        <a href="/notes" class="nav__link" href="#myBtn">Notes</a>
-        <a href="/settings" class="nav__link" href="#myBtn" >Reminders</a>
+        <a href="/" class="nav__first" href="#myBtn">ToDo List</a>
+        <a href="index.html" class="nav__link nav--link" href="#myBtn">Tasks</a>
+        <a href="notes.html" class="nav__link nav--link" href="#myBtn">Notes</a>
+        <a href="reminder.html" class="nav__link nav--link" href="#myBtn" >Reminders</a>
     </nav>
 
     <!-- Topbar Search -->
 
 
 <div class="topnav">
-    <form id="search-list">
-        <input type="text" placeholder=" Search..." name="search" class="todo-search" id="todo-search">
-    
+    <form id="search__list">
+        <input type="text" placeholder=" Search..." name="search" class="search__list-input">
     </form>
-    <!-- <input type="text" placeholder="Search.." > -->
 </div>
-    <!-- <form id="search-list">
-        <input type="text" placeholder=" Search..." name="search" class="todo-search" id="todo-search">
-       
-    </form> -->
-
-
-
+    
 
     <!-- End of Topbar -->
-
-
    
     <header class="header">
 
@@ -49,13 +39,13 @@
     </header>
 
     <form class="form">
-        <input type="text" class="todo-input form-input" placeholder="Add Tasks...."></input>
-        <button class ="todo-button form-button form__button" id=mybtn type="submit">
+        <input type="text" class="form__input" placeholder="Add Tasks...."></input>
+        <button class ="form--button form__button" id="mybtn" type="submit">
             <i class="fas fa-plus-square" ></i>
         </button>
 
         <div class="select" >
-            <select name="todos" class="filter-todo">
+            <select name="todos" class="filter__todo">
                 <option value="all">All</option>
                 <option value="completed">Completed</option>
                 <option value="pending">Pending</option>
@@ -63,8 +53,8 @@
         </div>
     </form>
 
-    <div class="todo-container">
-        <ul class="todo-list" id="todo-list-id"></ul>
+    <div class="todo__container">
+        <ul class="todo__list" id="todo-list-id"></ul>
         <!-- <div class="todo">
                         <li>Delete</li>
                         <li>Checked</li>

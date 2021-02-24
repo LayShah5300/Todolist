@@ -1,8 +1,8 @@
 //Selectors
-const todoInput = document.querySelector(".todo-input");
-const todoButton = document.querySelector(".form-button");
-const todoList = document.querySelector(".todo-list");
-const filterOption = document.querySelector(".filter-todo");
+const todoInput = document.querySelector(".form__input");
+const todoButton = document.querySelector(".form__button");
+const todoList = document.querySelector(".todo__list");
+const filterOption = document.querySelector(".filter__todo");
 
 
 //Event listeners
@@ -27,7 +27,7 @@ function addTodo(event){
     const newTodo = document.createElement("li");
     //newTodo.firstElementChild= todoInput.value;
     newTodo.innerText = todoInput.value;
-    newTodo.classList.add("todo-item");
+    newTodo.classList.add("todo__item");
     todoDiv.appendChild(newTodo);
 
     //Add todo to local storage
@@ -165,7 +165,7 @@ function getTodos() {
 
         const newTodo = document.createElement("li");
         newTodo.innerText = todo;
-        newTodo.classList.add("todo-item");
+        newTodo.classList.add("todo__item");
         todoDiv.appendChild(newTodo);
   
         //Tick Mark Button
@@ -210,9 +210,9 @@ function removeLocalTodos(todo) {
 
 
 
-//search try 3
+//search the taks in list
 
-const searchBar = document.forms["search-list"].querySelector("input");
+const searchBar = document.forms["search__list"].querySelector("input");
 
 
 searchBar.addEventListener("keyup", function (e) {

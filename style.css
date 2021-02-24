@@ -1,3 +1,4 @@
+
 * {
     padding: 0;
     margin: 0;
@@ -5,7 +6,7 @@
 }
 .body{
      --nav-width: 250px;
-    background-image: linear-gradient(120deg,#a3b8f3,#8f85f1);
+    background-image: linear-gradient(120deg,#b0c3f5,#978df0);
     color:rgb(253, 253, 253);
     font-family: "Poppins", sans-serif;
     /* min-height: 100vh; */
@@ -19,7 +20,7 @@
     background: white;
 }
 
-.nav-first{
+.nav__first{
     top: 0;
     background-color: #8f85f1;
      font-size: 1.7rem;
@@ -41,7 +42,7 @@
     font-weight: 500;
 }
 
-.nav__link:hover {
+.nav--link:hover {
     background: #52b3e7;
 }
 .header{
@@ -58,19 +59,19 @@
     align-items: center;
 }
 
-.form-input{
+.form__input{
     outline: none;
     min-width: 25%;
     margin-left: 40px;
 }
 
-.form-input,.form-button{
+.form__input,.form__button{
     padding: 0.5rem;
     font-size: 1.5rem;
     border: none;
     background: white;
 }
-.form-button{
+.form__button{
     min-width: 4%;
     color: #6687f3;
     /* #f38466 */
@@ -78,13 +79,13 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.form__button:hover{
+.form--button:hover{
 color: white;
 background-color:#8c66f3 ;
 /* #f38466 */
 }
 
-.todo-container{
+.todo__container{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -92,7 +93,7 @@ background-color:#8c66f3 ;
     margin-left: 45px;
 }
 
-.todo-list{
+.todo__list{
     min-width: 30%;
     list-style: none;
 }
@@ -127,7 +128,7 @@ font-size: 1rem;
     background-color: rgb(19, 211, 19);
 }
 
-.todo-item{
+.todo__item{
 
     padding: 0rem 0.5rem;
 }
@@ -185,7 +186,6 @@ select{
 
 /*Search Bar */
 
-/* new search bar */
 /* .searchh input[type=text]{ 
         width:300px; 
         font-size: 1.2rem;
@@ -199,14 +199,14 @@ select{
     }  */
          
 .topnav input[type=text] {
-    width:300px; 
-  float: right;
-  padding: 6px;
-  margin-top: 8px;
-  margin-right: 16px;
-   border-radius:25px;
-  border: none;
-  font-size: 17px;
+     width:300px; 
+     float: right;
+     padding: 6px;
+     margin-top: 8px;
+     margin-right: 16px;
+     border-radius:25px;
+     border: none;
+    font-size: 17px;
 } 
     
     
