@@ -1,0 +1,19 @@
+@mixin navbar__general ($fsize,$fcolor,$textdec){
+    font-size: $fsize;
+    color: $fcolor;
+    text-decoration: $textdec;
+    display: block;
+    font-weight: 500;
+    padding: 12px 18px;
+}
+
+@mixin center-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin add-btn($color,$b-color) {
+    color: $color;
+    background-color: $b-color;
+}

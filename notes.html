@@ -3,14 +3,14 @@
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:400,500&display=swap">
     </link>
-    <link rel="stylesheet" href="./notesstyle.css">
+    <link rel="stylesheet" href="./main.css">
     </link>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes-TodoList</title>
 </head>
-<body>
+<!-- <body class="body">
 <div class="modal">
     <div class="modal-content">
         <input class="modal-title" placeholder="Title" type="text">
@@ -18,5 +18,56 @@
         <span class="modal-close-button">Close</span>
     </div>
 </div>
+</body> -->
+
+<body class="body">
+
+    <nav class="nav">
+        <a href="/" class="nav__first" href="#myBtn">ToDo List</a>
+        <a href="index.html" class="nav__link nav--link" href="#myBtn">Tasks</a>
+        <a href="notes.html" class="nav__link nav--link" href="#myBtn">Notes</a>
+        <a href="reminder.html" class="nav__link nav--link" href="#myBtn">Reminders</a>
+    </nav>
+
+    <!-- Topbar Search -->
+
+
+    <div class="topnav">
+        <form id="search__list">
+            <input type="text" placeholder=" Search..." name="search" class="search__list-input">
+        </form>
+    </div>
+
+
+    <!-- End of Topbar -->
+
+    <header class="header">
+
+        <h1>TO DO LIST</h1>
+    </header>
+
+    <form class="form">
+        <input type="text" class="form__input" placeholder="Add Tasks...."></input>
+        <button class="form--button form__button" id="mybtn" type="submit">
+            <i class="fas fa-plus-square"></i>
+        </button>
+
+        <div class="select">
+            <select name="todos" class="filter__todo">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+            </select>
+        </div>
+    </form>
+
+    <div class="todo__container">
+        <ul class="todo__list" id="todo-list-id"></ul>
+        <!-- <div class="todo">
+                        <li>Delete</li>
+                        <li>Checked</li>
+                    </div>-->
+    </div>
+    <script src="./app.js"></script>
 </body>
 </html>
