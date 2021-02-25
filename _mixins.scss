@@ -13,7 +13,12 @@
     align-items: center;
 }
 
-@mixin add-btn($color,$b-color) {
+@mixin color-group($color,$b-color) {
     color: $color;
     background-color: $b-color;
+}
+
+@mixin margin($m-top,$m-right) {
+    margin-top: $m-top;
+    margin-right: $m-right;
 }

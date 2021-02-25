@@ -1,0 +1,155 @@
+@import "variables";
+@import "mixins";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body{
+    background-image: $bg-color;
+    color: $white-color;
+    font-family: "Poppins", sans-serif;
+    /* min-height: 100vh; */
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $nav-width;
+    height: 100vh;
+    background: $white-color;
+    
+    &__first{ @include navbar__general(1.7rem,$white-color,$text-dec-none);
+    top: 0;
+    background-color: #8f85f1;
+    margin-bottom: 10px;}
+
+    &__link{
+         @include navbar__general(1.2rem,$black-color,$text-dec-none);
+         &:hover{
+            background: #52b3e7;
+        }
+    }
+
+}
+
+.header{
+    margin-top: 3vh;
+    font-size: 1.5rem;
+}
+.header,.form{
+    @include center-element;
+    width: 100%;
+    margin-left: 60px;
+    min-height: 14vh;
+}
+.form__input{
+    outline: none;
+    min-width: 25%;
+    margin-left: 40px;
+}
+
+.form__input,.form__button{
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: none;
+    background: $white-color;
+}
+.form__button{
+    @include color-group(#6687f3,$white-color);
+    min-width: 4%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover{
+        @include color-group($white-color,#6687f3);
+    }
+}
+
+.todo__container{
+    @include center-element;
+    width: 100%;
+    margin-left: 45px;
+}
+
+.todo__list{
+    min-width: 30%;
+    list-style: none;
+}
+
+.todo{
+    @include color-group($black-color,$white-color);   
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    @include center-element;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+    & li{
+        flex: 1;
+    }
+    &__item{
+        padding: 0rem 0.5rem;
+    }
+}
+.trash-btn, .complete-btn{
+    @include color-group($white-color,#ec3232);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;       
+}
+.complete-btn{    
+    background-color: rgb(19, 211, 19);
+}
+.fa-trash,.fa-check{
+    pointer-events: none;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.fall{
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+select{
+    appearance: none;
+    outline: none;
+    border: none;
+    font-size: 1.3rem;
+    color: #8c66f3;
+    width: 10rem;
+    cursor: pointer;
+    padding: 0.6rem;
+}
+.select{
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+    &::after{
+        @include color-group(null,#8c66f3);
+        content: "\25BC";
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0.8rem;
+        pointer-events: none;
+        transition: all 0.3 es;
+    }
+    &:hover::after{
+        @include color-group(#8c66f3,$white-color);
+    }
+}
+.topnav input[type=text] {
+    @include margin(8px,16px);
+     width:300px; 
+     float: right;
+     padding: 6px;
+     border-radius:25px;
+     border: none;
+     font-size: 17px;
+}
