@@ -1,3 +1,8 @@
+//import
+
+import "search_list.js";
+import "filter_list.js";
+
 //Selectors
 const todoInput = document.querySelector(".form__input");
 const todoButton = document.querySelector(".form__button");
@@ -16,7 +21,6 @@ function addTodo(event){
     //prevent from submitting
 
     event.preventDefault();
-
     //todo Div
 
     const todoDiv = document.createElement("div");
@@ -84,42 +88,10 @@ function deleteCheck(e) {
    }
 }
 
-// Filter the list
+// Filter the list using function from filter_list js file
 
-function filterTodo(e) {
-
-   const todos = todoList.childNodes;
-  // console.log(todos);
-//    console.log(e.target.value);
-    
-    todos.forEach(function(todo) {
-
-        switch(e.target.value)
-        {
-        case "all":
-            todo.style.display = "flex";
-            break;
-
-        case "completed":
-             if (todo.classList.contains("completed")) {
-                todo.style.display = "flex";
-            }
-            else{
-                todo.style.display = "none";
-            }
-            break;
-            case "pending":
-            if(!todo.classList.contains("completed")){
-                todo.style.display = "flex";
-            }
-            else {
-                todo.style.display = "none";
-            }
-            break;
-       }
-             });
-}
-    
+import { filterTodo } from "./filter_list";
+filterTodo();    
 
 // Local Storage
 
@@ -208,34 +180,6 @@ function removeLocalTodos(todo) {
     localStorage.setItem('todos',JSON.stringify(todos));
 }
 
-
-
-//search the taks in list
-
-const searchBar = document.forms["search__list"].querySelector("input");
-
-
-searchBar.addEventListener("keyup", function (e) {
-
-    const term = e.target.value.toLowerCase();
-    const searched = todoList.getElementsByTagName("li");
-    const delelement = document.getElementsByClassName(".todo");
-    
-    Array.from(searched).forEach(function (todo) {
-
-    
-        const title = todo.textContent;
-        if (title.toLowerCase().indexOf(term) != -1) {
-
-            todo.style.display = "flex";
-
-        }
-
-        else {
-            todo.style.display = "none";
-        }
-
-    })
-
-})
-
+//Using the search function from searchlist js file.
+import { search_the_list } from "./search_list";
+search_the_list();
