@@ -8,11 +8,14 @@
     <link rel=stylesheet href="./style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+   
+    
     <title class="title">Todo List</title>
 </head>
 <body class="body">
+
 
     <nav class="nav">
         <a href="/" class="nav__first" href="#myBtn">ToDo List</a>
@@ -36,13 +39,39 @@
     <header class="header">
 
         <h1>TO DO LIST</h1>
+        <div class="first">
+        <script id="first-template" type="text/x-handlebars-template">
+            <p>
+                Hello,my name is {{name}} !
+            </p>
+
+           
+        </script>
+        </div>
+        <div class="second">
+            <script id="second-template" type="text/x-handlebars-template">
+                
+                <ul class="todo__list" id="todo__list">
+                        {{#each todos}}
+                        <div class="todo">
+                            <li class="todo__item">{{todoname}}</li>
+                            <button class="complete-btn"><i class="fas fa-check"></i></button>
+                            <button class="trash-btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                        {{/each}}
+                    </ul>
+                    </script>
+        </div>
     </header>
 
     <form class="form">
-        <input type="text" class="form__input" placeholder="Add Tasks...."></input>
+        <input type="text" class="form__input" id="form__input" placeholder="Add Tasks...."></input>
         <button class ="form--button form__button" id="mybtn" type="submit">
+            
             <i class="fas fa-plus-square" ></i>
         </button>
+        <button class="form--button form__button2" id="mybtn2" type="submit">Button</button>
+
 
         <div class="select" >
             <select name="todos" class="filter__todo">
@@ -53,13 +82,16 @@
         </div>
     </form>
 
+   
+
     <div class="todo__container">
         <ul class="todo__list" id="todo-list-id"></ul>
-        <!-- <div class="todo">
-                        <li>Delete</li>
+        <!-- <div class="todo__item">
+                        <li class="todo">Delete</li>
                         <li>Checked</li>
                     </div>-->
     </div>
-<script src="./app.js"></script>
+<script src="./handlebars-v4.7.6.js" type="text/javascript"></script>
+<script src="./app.js" type="text/javascript"></script>
 </body>
 </html>

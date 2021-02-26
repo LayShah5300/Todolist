@@ -1,8 +1,5 @@
 //import
 
-import "search_list.js";
-import "filter_list.js";
-
 //Selectors
 const todoInput = document.querySelector(".form__input");
 const todoButton = document.querySelector(".form__button");
@@ -12,15 +9,18 @@ const filterOption = document.querySelector(".filter__todo");
 
 //Event listeners
 document.addEventListener("DOMContentLoaded",getTodos);
-todoButton.addEventListener("click",addTodo);
+ todoButton.addEventListener("click",addTodo);
+//todoButton.addEventListener("click", createList);
 todoList.addEventListener("click",deleteCheck);
 filterOption.addEventListener("click",filterTodo);
 
 //Functions
+
 function addTodo(event){
     //prevent from submitting
 
     event.preventDefault();
+
     //todo Div
 
     const todoDiv = document.createElement("div");
@@ -90,8 +90,41 @@ function deleteCheck(e) {
 
 // Filter the list using function from filter_list js file
 
-import { filterTodo } from "./filter_list";
-filterTodo();    
+function filterTodo(e) {
+
+    const todos = todoList.childNodes;
+    // console.log(todos);
+    //    console.log(e.target.value);
+
+    todos.forEach(function (todo) {
+
+        switch (e.target.value) {
+            case "all":
+                todo.style.display = "flex";
+                break;
+
+            case "completed":
+                if (todo.classList.contains("completed")) {
+                    todo.style.display = "flex";
+                }
+                else {
+                    todo.style.display = "none";
+                }
+                break;
+            case "pending":
+                if (!todo.classList.contains("completed")) {
+                    todo.style.display = "flex";
+                }
+                else {
+                    todo.style.display = "none";
+                }
+                break;
+        }
+    });
+}
+
+//  import { filter_the_list } from "./filter_list.js";
+//  filter_the_list();    
 
 // Local Storage
 
@@ -181,5 +214,85 @@ function removeLocalTodos(todo) {
 }
 
 //Using the search function from searchlist js file.
-import { search_the_list } from "./search_list";
-search_the_list();
+// import "./search_list";
+// import { search_the_list } from "./search_list.js";
+// search_the_list();
+
+const searchBar = document.forms["search__list"].querySelector("input");
+
+
+searchBar.addEventListener("keyup", function (e) {
+
+    const term = e.target.value.toLowerCase();
+    const searched = todoList.getElementsByTagName("li");
+    const delelement = document.getElementsByClassName(".todo");
+
+    Array.from(searched).forEach(function (todo) {
+
+
+        const title = todo.textContent;
+        if (title.toLowerCase().indexOf(term) != -1) {
+
+            todo.style.display = "flex";
+
+        }
+
+        else {
+            todo.style.display = "none";
+        }
+
+    })
+
+})
+
+//Handlebars
+
+// var tmpHtml = document.getElementById("myTemplate").innerHTML;
+// var template = Handlebars.compile(tmpHtml);
+// var data = template({ name: "Lay" });
+
+var source = document.getElementById("first-template").innerHTML;
+var template = Handlebars.compile(source);
+
+var context = {
+    name: "Lay"
+};
+
+var html = template(context);
+
+var destination = document.querySelector(".first");
+destination.innerHTML = html ;
+
+
+// var todosource = document.getElementById("second-template").innerHTML;
+// //console.log(todosource);
+// var todotemplate = Handlebars.compile(todosource);
+// var somevalue = todoInput.value;
+
+const f2 = document.querySelector(".form__button2")
+f2.addEventListener("click",addnew);
+
+
+function addnew(event) {
+    event.preventDefault();
+
+    var fname =[]
+    var fname = todoInput.value;
+    var todosource = document.getElementById("second-template").innerHTML;
+    //console.log(todosource);
+    var todotemplate = Handlebars.compile(todosource);
+
+    var todocontext = {
+        todos:
+            [
+                {
+                    todoname: fname
+                }
+            ]
+    };
+
+    var todohtml = todotemplate(todocontext);
+    var tododestination = document.querySelector(".todo__container");
+    tododestination.innerHTML = todohtml;
+    
+}

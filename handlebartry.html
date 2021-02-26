@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Handlebars.js tutorial</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./handlebars-v4.7.6.js"></script>
+    <script src="./handleapp.js"></script>
+    
+</head>
+
+<body>
+<div id="displayArea">
+
+    <script id="myTemplate" type="text/x-handlebars-template">
+    <h1>Hello {{name}}</h1>
+    <ul class="todo__list" id="todo__list">
+        {{#each todos}}
+        <div class="todo">
+            <li class="todo__item">{{todoname}}</li>
+            <button class="complete-btn"><i class="fas fa-check"></i></button>
+            <button class="trash-btn"><i class="fas fa-trash"></i></button>
+        </div>
+        {{/each}}
+    </ul>
+</script>
+
+    <script type="text/javascript">
+        var tmpHtml = document.getElementById("myTemplate").innerHTML;
+        console.log(tmpHtml);
+        
+        // var template = Handlebars.compile(tmpHtml);
+        // var data = template({ name: "Lay" });
+
+        // document.getElementById("displayArea").innerHTML += data;
+    </script>
+
+<div class="todo__container">
+    <script id="todoTemplate" type="text/x-handlebars-template">
+        <!-- <ul class="todo__list" id="todo__list">
+            {{#each todos}}
+                <div class="todo">
+                     <li class="todo__item">{{todoname}}</li>
+                        <button class="complete-btn"><i class="fas fa-check"></i></button>
+                        <button class="trash-btn"><i class="fas fa-trash"></i></button>
+                </div>
+            {{/each}}
+        </ul> -->
+    </script>
+</div>
+    <!-- <div class="todo__container">
+
+
+    </div> -->
+</div>
+</body>
+
+</html>
