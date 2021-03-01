@@ -9,7 +9,7 @@ const filterOption = document.querySelector(".filter__todo");
 
 //Event listeners
 document.addEventListener("DOMContentLoaded",getTodos);
- todoButton.addEventListener("click",addTodo);
+todoButton.addEventListener("click",addTodo);
 //todoButton.addEventListener("click", createList);
 todoList.addEventListener("click",deleteCheck);
 filterOption.addEventListener("click",filterTodo);
