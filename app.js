@@ -253,18 +253,6 @@ searchBar.addEventListener("keyup", function (e) {
 // var template = Handlebars.compile(tmpHtml);
 // var data = template({ name: "Lay" });
 
-var source = document.getElementById("first-template").innerHTML;
-var template = Handlebars.compile(source);
-
-var context = {
-    name: "Lay"
-};
-
-var html = template(context);
-
-var destination = document.querySelector(".first");
-destination.innerHTML = html ;
-
 
 // var todosource = document.getElementById("second-template").innerHTML;
 // //console.log(todosource);
@@ -282,20 +270,17 @@ function addnew(event) {
     event.preventDefault();
 
     var taskDict = {}
-    // var fname =[]
-    // var fname = todoInput.value;
     taskDict["todoname"] = todoInput.value;
     todocontext.todos.push(taskDict);
     //console.log(todocontext);
     var todosource = document.getElementById("second-template").innerHTML;
-    //console.log(todosource);
+    
     var todotemplate = Handlebars.compile(todosource);
-    console.log(todohtml);
 
     var todohtml = todotemplate(todocontext);
-    console.log(todohtml);
+
     var tododestination = document.querySelector(".todo__container");
     tododestination.innerHTML = todohtml;
     
+    todoInput.value="";
 }
-
