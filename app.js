@@ -16,6 +16,8 @@ filterOption.addEventListener("click",filterTodo);
 
 //Functions
 
+
+
 function addTodo(event){
     //prevent from submitting
 
@@ -272,27 +274,28 @@ destination.innerHTML = html ;
 const f2 = document.querySelector(".form__button2")
 f2.addEventListener("click",addnew);
 
+var todocontext = {
+    "todos":  []
+};
 
 function addnew(event) {
     event.preventDefault();
 
-    var fname =[]
-    var fname = todoInput.value;
+    var taskDict = {}
+    // var fname =[]
+    // var fname = todoInput.value;
+    taskDict["todoname"] = todoInput.value;
+    todocontext.todos.push(taskDict);
+    //console.log(todocontext);
     var todosource = document.getElementById("second-template").innerHTML;
     //console.log(todosource);
     var todotemplate = Handlebars.compile(todosource);
-
-    var todocontext = {
-        todos:
-            [
-                {
-                    todoname: fname
-                }
-            ]
-    };
+    console.log(todohtml);
 
     var todohtml = todotemplate(todocontext);
+    console.log(todohtml);
     var tododestination = document.querySelector(".todo__container");
     tododestination.innerHTML = todohtml;
     
 }
+
