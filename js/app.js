@@ -1,5 +1,5 @@
 //import
-
+import { searchList } from "./search__list.js";
 
 //Selectors
 /**
@@ -11,6 +11,7 @@ const todoButton = document.querySelector(".form__button");
 const todoList = document.querySelector(".todo__list");
 const filterOption = document.querySelector(".filter__todo");
 const searchBar = document.forms["search__list"].querySelector("input");
+const todoButtonForHandleBar = document.querySelector(".form__button2")
 
 //Event listeners
 
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded",getTodos);
 todoButton.addEventListener("click",addTodo);
 todoList.addEventListener("click",deleteCheck);
 filterOption.addEventListener("click",filterTodo);
+todoButtonForHandleBar.addEventListener("click", addnew);
 //todoButton.addEventListener("click", createList);
 
 //Functions
@@ -235,37 +237,12 @@ function removeLocalTodos(todo) {
     localStorage.setItem('todos',JSON.stringify(todos));
 }
 
-//Using the search function from searchlist js file.
-// import "./search_list";
-// import { search_the_list } from "./search_list.js";
-// search_the_list();
-
-searchBar.addEventListener("keyup", function (e) {
-
-    const term = e.target.value.toLowerCase();
-    const searched = todoList.getElementsByTagName("li");
-    const delelement = document.getElementsByClassName(".todo");
-
-    Array.from(searched).forEach(function (todo) {
+/**
+ * Using the search function from searchlist js file.
+ */
+searchList();
 
 
-        const title = todo.textContent;
-        if (title.toLowerCase().indexOf(term) != -1) {
-
-            todo.style.display = "flex";
-
-        }
-
-        else {
-            todo.style.display = "none";
-        }
-
-    })
-
-})
-
-const todoButtonForHandleBar = document.querySelector(".form__button2")
-todoButtonForHandleBar.addEventListener("click",addnew);
 
 // to provide value to the template.
 var todocontext = {
