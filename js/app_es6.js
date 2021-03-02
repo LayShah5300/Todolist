@@ -112,7 +112,7 @@ function filterTodo(e) {
     const todos = todoList.childNodes;
     // console.log(todos);
     //    console.log(e.target.value); 
-    todos.forEach(function (todo) {
+    todos.forEach(todo => {
 
         switch (e.target.value) {
             case "all":
@@ -179,7 +179,7 @@ function getTodos() {
         todos = JSON.parse(localStorage.getItem('todos'));
     }
 
-    todos.forEach(function (todo) {
+    todos.forEach(todo => {
     
         //todo Div
 
@@ -214,7 +214,7 @@ function getTodos() {
 
 }
 /**
- *  Remove the list from local storage
+ * Remove the list from local storage
  * @param  {String} todo - gets the list item whose 
  * remove button is clicked.
  */
@@ -240,13 +240,13 @@ function removeLocalTodos(todo) {
 // import { search_the_list } from "./search_list.js";
 // search_the_list();
 
-searchBar.addEventListener("keyup", function (e) {
+searchBar.addEventListener("keyup", e => {
 
     const term = e.target.value.toLowerCase();
     const searched = todoList.getElementsByTagName("li");
     const delelement = document.getElementsByClassName(".todo");
 
-    Array.from(searched).forEach(function (todo) {
+    Array.from(searched).forEach(todo => {
 
 
         const title = todo.textContent;
@@ -268,7 +268,7 @@ const todoButtonForHandleBar = document.querySelector(".form__button2")
 todoButtonForHandleBar.addEventListener("click",addnew);
 
 // to provide value to the template.
-var todocontext = {
+const todocontext = {
     "todos":  []
 };
 /**Perform Add list using HandleBars.
@@ -277,16 +277,16 @@ var todocontext = {
 function addnew(event) {
     event.preventDefault();
 
-    var taskInput = {}
+    const taskInput = {};
     taskInput["todoname"] = todoInput.value;
     todocontext.todos.push(taskInput);
     //console.log(todocontext);
     
-    var todosource = document.getElementById("display-template").innerHTML;
-    var todotemplate = Handlebars.compile(todosource);
-    var todohtml = todotemplate(todocontext);
+    const todosource = document.getElementById("display-template").innerHTML;
+    const todotemplate = Handlebars.compile(todosource);
+    const todohtml = todotemplate(todocontext);
 
-    var tododestination = document.querySelector(".todo__container");
+    const tododestination = document.querySelector(".todo__container");
     tododestination.innerHTML = todohtml;
     
     todoInput.value="";
