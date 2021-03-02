@@ -1,6 +1,3 @@
-//import
-
-
 //Selectors
 /**
  * Form Input.
@@ -235,10 +232,6 @@ function removeLocalTodos(todo) {
     localStorage.setItem('todos',JSON.stringify(todos));
 }
 
-//Using the search function from searchlist js file.
-// import "./search_list";
-// import { search_the_list } from "./search_list.js";
-// search_the_list();
 
 searchBar.addEventListener("keyup", e => {
 
