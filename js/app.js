@@ -1,5 +1,6 @@
 //import
-import { searchList } from "./search__list.js";
+const search__list = require('./search__list.js');
+//import { searchList } from "./search__list.js";
 
 //Selectors
 
@@ -241,7 +242,7 @@ function removeLocalTodos(todo) {
 /**
  * Using the search function from searchlist js file.
  */
-searchList();
+search__list();
 
 
 

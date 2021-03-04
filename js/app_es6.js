@@ -7,7 +7,7 @@ const todoInput = document.querySelector(".form__input");
 const todoButton = document.querySelector(".form__button");
 const todoList = document.querySelector(".todo__list");
 const filterOption = document.querySelector(".filter__todo");
-const searchBar = document.forms["search__list"].querySelector("input");
+//const searchBar = document.forms["search__list"].querySelector("input");
 
 //Event listeners
 
@@ -99,7 +99,7 @@ function deleteCheck(e) {
        todo.classList.toggle("completed");
    }
 }
-
+module.exports = deleteCheck
 /**
  * Filter the list using function from filter_list js file
  * @param  {object} e - to perform event
@@ -135,6 +135,8 @@ function filterTodo(e) {
         }
     });
 }
+
+
 
 //  import { filter_the_list } from "./filter_list.js";
 //  filter_the_list();    
